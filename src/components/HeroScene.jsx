@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import * as THREE from 'three'
 import { createWoman } from '../lib/createWoman'
 import { createHeart } from '../lib/createHeart'
+import { Sprig } from './Icons'
 
 const HEART_COLORS = [0xfb7185, 0xf43f5e, 0xfda4af, 0xe11d48, 0xfecdd3]
 // Posisi dan ukuran hati kecil yang melayang naik
@@ -234,18 +235,25 @@ export default function HeroScene() {
     <div
       role="img"
       aria-label="Ilustrasi 3D wanita memegang buket bunga dikelilingi hati"
-      className="relative w-full h-[380px] sm:h-[480px] lg:h-[560px]"
+      className="relative mx-auto aspect-[5/6] w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[460px]"
     >
+      {/* bingkai lengkung ala jendela rumah kaca */}
       <div
         aria-hidden="true"
-        className="absolute inset-[8%] rounded-full bg-gradient-to-br from-rose-200 via-pink-100 to-amber-100"
+        className="absolute inset-0 rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-b from-petal via-[#FDE2E7] to-[#FFF3EC]"
       />
-      <div aria-hidden="true" className="absolute inset-[18%] rounded-full border border-white/70" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-3 rounded-t-[999px] rounded-b-[1.5rem] border border-white/80"
+      />
       {failed ? (
         <div className="absolute inset-0 flex items-center justify-center text-8xl">💐</div>
       ) : (
         <div ref={containerRef} className="absolute inset-0" />
       )}
+      {/* dedaunan di dasar bingkai */}
+      <Sprig className="pointer-events-none absolute -bottom-3 -left-5 h-36 w-auto text-leaf sm:-left-8 sm:h-44" />
+      <Sprig flip className="pointer-events-none absolute -bottom-3 -right-5 h-32 w-auto text-leaf/90 sm:-right-8 sm:h-40" />
     </div>
   )
 }

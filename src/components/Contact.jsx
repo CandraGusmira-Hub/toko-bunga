@@ -2,8 +2,8 @@ import { WA_NUMBER } from '../config'
 
 export default function Contact() {
   return (
-    <section id="kontak" className="px-5 pb-16">
-      <div className="max-w-6xl mx-auto bg-gradient-to-br from-rose-500 to-pink-400 rounded-[2rem] text-white text-center py-14 px-6">
+    <section id="kontak" className="px-5 pb-12 sm:pb-16">
+      <div className="max-w-6xl mx-auto bg-gradient-to-br from-rose-500 to-pink-400 rounded-[2rem] text-white text-center py-10 sm:py-14 px-5 sm:px-6">
         <h2 className="font-display text-3xl sm:text-4xl font-extrabold">Siap mengirim bunga hari ini?</h2>
         <p className="mt-3 text-rose-50">Hubungi kami dan dapatkan rangkaian terbaik.</p>
         <a
