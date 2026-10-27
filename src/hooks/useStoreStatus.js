@@ -21,7 +21,7 @@ function compute() {
     open: isOpen,
     label: isOpen
       ? `Buka sampai ${pad(STORE_HOURS.close)}`
-      : `Tutup , buka lagi pukul ${pad(STORE_HOURS.open)}`,
+      : `Tutup, buka lagi pukul ${pad(STORE_HOURS.open)}`,
   }
 }
 

@@ -1,50 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght,SOFT@9..144,400..700,0..100&display=swap');
+@import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-paper: #FFFBF9;
+  --color-blush: #FFF0F0;
+  --color-petal: #F9D3DB;
+  
+  --color-peony: #D6336C;
+  --color-peony-dark: #B02458;
+  --color-peony-light: #F06595;
 
-@layer base {
-  html {
-    -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
-    scroll-padding-top: 5rem;
-  }
+  --color-leaf: #1F4A3A;
+  --color-leaf-dark: #163528;
+  --color-leaf-sage: #CFE0D3;
+  --color-leaf-mist: #EAF2EC;
 
-  body {
-    @apply bg-paper font-sans text-ink antialiased;
-    margin: 0;
-    overflow-x: clip; /* cegah geser horizontal di HP tanpa merusak sticky navbar */
-  }
+  --color-butter: #F3C969;
+  --color-ink: #2B1B24;
+  --color-muted: #6B5560;
 
-  h1,
-  h2,
-  h3 {
-    @apply font-display;
-    font-variation-settings: 'SOFT' 100;
-    text-wrap: balance;
-  }
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Figtree', system-ui, sans-serif;
 
-  :focus-visible {
-    outline: 2px solid theme('colors.leaf.DEFAULT');
-    outline-offset: 2px;
-  }
+  --shadow-lift: 0 14px 30px -12px rgba(176, 36, 88, 0.45);
 
-  @media (prefers-reduced-motion: reduce) {
-    html {
-      scroll-behavior: auto;
-    }
-  }
+  --animate-rise: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade: fade 0.2s ease-out both;
+  --animate-pop: pop 0.25s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-slide: slide 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
-@layer components {
-  /* Fraunces: sumbu SOFT membuat ujung huruf lebih membulat, selaras dengan bentuk bunga */
-  .font-display {
-    font-variation-settings: 'SOFT' 100;
-  }
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
 
-  /* area gelap (hijau daun): ring fokus putih agar tetap terlihat */
-  .on-dark :focus-visible {
-    outline-color: #fff;
+@keyframes fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes slide {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: #FFFBF9;
+  color: #2B1B24;
+  font-family: 'Figtree', system-ui, sans-serif;
+  margin: 0;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'SOFT' 100;
+  text-wrap: balance;
+}
+
+.font-display {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: 'SOFT' 100;
+}
+
+:focus-visible {
+  outline: 2px solid #1F4A3A;
+  outline-offset: 2px;
+}
+
+.on-dark :focus-visible {
+  outline-color: #ffffff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }

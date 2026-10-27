@@ -211,7 +211,7 @@ function Panel() {
                   <button
                     type="button"
                     disabled
-                    className="mt-3 w-full cursor-not-allowed rounded-full bg-stone-200 px-6 py-3.5 font-semibold text-stone-500"
+                    className="mt-3 w-full cursor-not-allowed rounded-full bg-petal/40 px-6 py-3.5 font-semibold text-muted/70"
                   >
                     Kirim pesanan ke WhatsApp
                   </button>

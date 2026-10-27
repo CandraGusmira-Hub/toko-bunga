@@ -1,12 +1,25 @@
-// Data produk. Ubah/tambah item di sini untuk memperbarui katalog.
-// category: 'romantis' | 'ceria' | 'elegan'
-// images: daftar gambar yang bisa digeser di card. Tanpa images, card memakai emoji.
-// desc: deskripsi singkat yang tampil di jendela detail produk.
+// Data produk & buket bunga.
+// category: 'romantis' | 'ceria' | 'elegan' | 'buket'
+// type: 'buket' | 'tangkai'
 export const CATEGORIES = [
-  { key: 'semua', label: 'Semua' },
-  { key: 'romantis', label: 'Romantis' },
-  { key: 'ceria', label: 'Ceria' },
-  { key: 'elegan', label: 'Elegan' },
+  { key: 'semua', label: 'Semua Koleksi', icon: '✨' },
+  { key: 'buket', label: 'Buket Bunga', icon: '💐' },
+  { key: 'romantis', label: 'Romantis', icon: '🌹' },
+  { key: 'ceria', label: 'Ceria & Wisuda', icon: '🌻' },
+  { key: 'elegan', label: 'Elegan & Formal', icon: '🤍' },
+]
+
+export const TYPES = [
+  { key: 'semua', label: 'Semua Format' },
+  { key: 'buket', label: 'Buket Siap Jadi' },
+  { key: 'tangkai', label: 'Bunga Segar / Tangkai' },
+]
+
+export const PRICE_RANGES = [
+  { key: 'semua', label: 'Semua Harga', min: 0, max: Infinity },
+  { key: 'under50', label: '< Rp 50.000', min: 0, max: 50000 },
+  { key: '50to150', label: 'Rp 50.000 – 150.000', min: 50000, max: 150000 },
+  { key: 'above150', label: '> Rp 150.000', min: 150000, max: Infinity },
 ]
 
 export const SORTS = [
@@ -17,6 +30,81 @@ export const SORTS = [
 ]
 
 export const PRODUCTS = [
+  // --- READY-TO-ORDER FLOWER BOUQUETS ---
+  {
+    id: 101,
+    name: 'Buket Mawar Scarlet Romance',
+    images: ['/produk/mawar.webp', '/produk/mawar1.webp'],
+    price: 165000,
+    unit: 'buket',
+    category: 'romantis',
+    type: 'buket',
+    badge: 'Terlaris',
+    bg: 'from-rose-200 to-rose-100',
+    desc: 'Hand bouquet mewah berisi 10 tangkai mawar merah segar pilihan, dihiasi baby breath putih lembut dan wrapping kertas Korea premium beraksen pita satin.',
+  },
+  {
+    id: 102,
+    name: 'Buket Wisuda Sunny Cheer',
+    images: ['/produk/sunflower.webp', '/produk/sunflower1.webp'],
+    price: 145000,
+    unit: 'buket',
+    category: 'ceria',
+    type: 'buket',
+    badge: 'Favorit Wisuda',
+    bg: 'from-amber-200 to-yellow-100',
+    desc: 'Buket wisuda cerah dengan 3 tangkai bunga matahari mekar sempurna, dipadu filler foliage segar. Sangat cocok merayakan kelulusan dan hari bahagia.',
+  },
+  {
+    id: 103,
+    name: 'Buket Lily Sweet Grace',
+    images: ['/produk/lilypink.webp', '/produk/lilypink1.webp'],
+    price: 185000,
+    unit: 'buket',
+    category: 'romantis',
+    type: 'buket',
+    badge: 'Aroma Harum',
+    bg: 'from-pink-200 to-fuchsia-100',
+    desc: 'Rangkaian hand bouquet bunga lily oriental pink dengan kelopak mekar mempesona dan keharuman alami yang tahan lama. Termasuk kartu ucapan gratis.',
+  },
+  {
+    id: 104,
+    name: 'Bloom Box Royal Peony',
+    emoji: '🌸',
+    price: 240000,
+    unit: 'box',
+    category: 'romantis',
+    type: 'buket',
+    badge: 'Eksklusif',
+    bg: 'from-pink-300 to-rose-100',
+    desc: 'Flower box bulat eksklusif bertabur peony pink mekar subur, mawar soft pastel, dan sentuhan pita sutra emas. Elegan untuk hadiah anniversary dan ulang tahun.',
+  },
+  {
+    id: 105,
+    name: 'Standing Flower Grand Opening',
+    emoji: '💐',
+    price: 450000,
+    unit: 'rangkaian',
+    category: 'elegan',
+    type: 'buket',
+    badge: 'Acara Formal',
+    bg: 'from-stone-100 to-rose-100',
+    desc: 'Standing flower bertingkat dengan rangkaian lily putih, mawar, dan krisan segar di atas tripod besi kokoh. Dilengkapi banner ucapan kustom.',
+  },
+  {
+    id: 106,
+    name: 'Pastel Meadow Lavender Bouquet',
+    emoji: '🪻',
+    price: 135000,
+    unit: 'buket',
+    category: 'elegan',
+    type: 'buket',
+    badge: 'Wangi Alami',
+    bg: 'from-violet-200 to-purple-100',
+    desc: 'Buket rustic perpaduan lavender ungu wangi, baby breath kering, dan caspea dalam balutan kertas kraft cokelat vintage.',
+  },
+
+  // --- FRESH FLOWER STEMS & BUNCHES ---
   {
     id: 1,
     name: 'Mawar Merah',
@@ -24,6 +112,7 @@ export const PRODUCTS = [
     price: 8000,
     unit: 'tangkai',
     category: 'romantis',
+    type: 'tangkai',
     bg: 'from-rose-200 to-rose-100',
     desc: 'Mawar merah klasik dengan kelopak beludru. Ungkapan cinta yang tidak pernah salah untuk pasangan.',
   },
@@ -34,7 +123,8 @@ export const PRODUCTS = [
     price: 15000,
     unit: 'tangkai',
     category: 'ceria',
-    bg: 'from-pink-200 to-fuchsia-100',
+    type: 'tangkai',
+    bg: 'from-amber-200 to-yellow-100',
     desc: 'Bunga matahari yang mekar cerah, pembawa semangat untuk ulang tahun, wisuda, atau sekadar menyemangati seseorang.',
   },
   {
@@ -44,7 +134,8 @@ export const PRODUCTS = [
     price: 12000,
     unit: 'tangkai',
     category: 'romantis',
-    bg: 'from-amber-200 to-yellow-100',
+    type: 'tangkai',
+    bg: 'from-pink-200 to-fuchsia-100',
     desc: 'Lily pink dengan kelopak besar yang anggun dan aroma harum. Cocok untuk ucapan sayang dan selamat.',
   },
   {
@@ -54,6 +145,7 @@ export const PRODUCTS = [
     price: 25000,
     unit: 'tangkai',
     category: 'elegan',
+    type: 'tangkai',
     bg: 'from-stone-200 to-rose-50',
     desc: 'Lily putih yang bersih dan elegan, pilihan untuk pernikahan, acara formal, dan ucapan simpati.',
   },
@@ -64,6 +156,7 @@ export const PRODUCTS = [
     price: 45000,
     unit: 'tangkai',
     category: 'romantis',
+    type: 'tangkai',
     bg: 'from-pink-300 to-rose-100',
     desc: 'Peony berkelopak tebal dan berlapis, lembut sekaligus mewah. Favorit untuk hadiah yang istimewa.',
   },
@@ -74,6 +167,7 @@ export const PRODUCTS = [
     price: 10000,
     unit: 'ikat',
     category: 'elegan',
+    type: 'tangkai',
     bg: 'from-violet-200 to-purple-100',
     desc: 'Lavender ungu beraroma menenangkan. Dijual per ikat, cocok sebagai pelengkap rangkaian atau hiasan meja.',
   },
@@ -84,6 +178,7 @@ export const PRODUCTS = [
     price: 7000,
     unit: 'ikat',
     category: 'elegan',
+    type: 'tangkai',
     bg: 'from-slate-200 to-white',
     desc: 'Bunga mungil putih yang membuat rangkaian tampak lebih penuh dan lembut. Dijual per ikat.',
   },
@@ -94,6 +189,7 @@ export const PRODUCTS = [
     price: 9000,
     unit: 'tangkai',
     category: 'ceria',
+    type: 'tangkai',
     bg: 'from-orange-200 to-amber-100',
     desc: 'Gerbera berwarna cerah dengan kelopak lebar, membawa suasana riang untuk ulang tahun dan ucapan selamat.',
   },

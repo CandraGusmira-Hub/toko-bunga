@@ -68,12 +68,12 @@ export default function ProductModal({ product, onClose }) {
           </p>
           <p className="mt-4 leading-relaxed text-muted">{product.desc}</p>
 
-          <div className="mt-6 rounded-2xl bg-leaf-mist p-4">
-            <h3 className="text-sm font-semibold text-leaf">Tips perawatan</h3>
-            <ul className="mt-2 space-y-1.5 text-sm text-leaf-dark">
+          <div className="mt-6 rounded-2xl border border-petal/60 bg-blush p-4">
+            <h3 className="text-sm font-bold text-peony-dark">Tips perawatan bunga</h3>
+            <ul className="mt-2 space-y-1.5 text-xs text-ink/80 sm:text-sm">
               {CARE.map((c) => (
                 <li key={c} className="flex gap-2">
-                  <span aria-hidden="true" className="mt-2 h-1 w-1 shrink-0 rounded-full bg-leaf" />
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-peony" />
                   {c}
                 </li>
               ))}
@@ -85,7 +85,7 @@ export default function ProductModal({ product, onClose }) {
               <button
                 type="button"
                 onClick={() => change(product.id, 1)}
-                className="flex items-center justify-center gap-2 rounded-full bg-peony px-6 py-3.5 font-semibold text-white shadow-lift transition hover:bg-peony-dark"
+                className="flex items-center justify-center gap-2 rounded-full bg-peony px-6 py-3.5 font-semibold text-white shadow-lift transition hover:bg-peony-dark active:scale-95"
               >
                 <PlusIcon className="h-5 w-5" />
                 Tambah ke keranjang
@@ -104,7 +104,7 @@ export default function ProductModal({ product, onClose }) {
                     onClose()
                     openCart()
                   }}
-                  className="flex-1 rounded-full bg-leaf px-6 py-3.5 font-semibold text-white transition hover:bg-leaf-dark"
+                  className="flex-1 rounded-full bg-peony px-6 py-3.5 font-semibold text-white shadow-lift transition hover:bg-peony-dark active:scale-95"
                 >
                   Lihat keranjang
                 </button>
@@ -114,9 +114,9 @@ export default function ProductModal({ product, onClose }) {
               href={orderNow}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 rounded-full border border-petal px-6 py-3 text-sm font-semibold text-ink transition hover:border-leaf hover:text-leaf"
+              className="flex items-center justify-center gap-2 rounded-full border border-petal bg-white px-6 py-3 text-sm font-semibold text-ink transition hover:border-peony hover:text-peony active:scale-95"
             >
-              <ChatIcon className="h-4 w-4" />
+              <ChatIcon className="h-4 w-4 text-peony" />
               Pesan langsung via WhatsApp
             </a>
           </div>

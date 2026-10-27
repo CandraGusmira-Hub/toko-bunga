@@ -235,25 +235,27 @@ export default function HeroScene() {
     <div
       role="img"
       aria-label="Ilustrasi 3D wanita memegang buket bunga dikelilingi hati"
-      className="relative mx-auto aspect-[5/6] w-full max-w-[380px] sm:max-w-[440px] lg:max-w-[460px]"
+      className="relative mx-auto aspect-[5/6] w-full max-w-[320px] sm:max-w-[420px] lg:max-w-[460px]"
     >
       {/* bingkai lengkung ala jendela rumah kaca */}
       <div
         aria-hidden="true"
-        className="absolute inset-0 rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-b from-petal via-[#FDE2E7] to-[#FFF3EC]"
+        className="absolute inset-0 rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-b from-petal via-blush to-paper shadow-sm"
       />
       <div
         aria-hidden="true"
-        className="absolute inset-3 rounded-t-[999px] rounded-b-[1.5rem] border border-white/80"
+        className="absolute inset-2 sm:inset-3 rounded-t-[999px] rounded-b-[1.5rem] border border-white/90 shadow-inner"
       />
       {failed ? (
-        <div className="absolute inset-0 flex items-center justify-center text-8xl">💐</div>
+        <div className="absolute inset-0 flex items-center justify-center text-7xl sm:text-8xl">💐</div>
       ) : (
         <div ref={containerRef} className="absolute inset-0" />
       )}
       {/* dedaunan di dasar bingkai */}
-      <Sprig className="pointer-events-none absolute -bottom-3 -left-5 h-36 w-auto text-leaf sm:-left-8 sm:h-44" />
-      <Sprig flip className="pointer-events-none absolute -bottom-3 -right-5 h-32 w-auto text-leaf/90 sm:-right-8 sm:h-40" />
+      <div className="pointer-events-none absolute inset-x-0 -bottom-2 flex justify-between overflow-hidden">
+        <Sprig className="h-32 sm:h-44 w-auto text-leaf -translate-x-2" />
+        <Sprig flip className="h-28 sm:h-40 w-auto text-leaf/90 translate-x-2" />
+      </div>
     </div>
   )
 }

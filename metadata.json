@@ -1,0 +1,6 @@
+{
+  "name": "Candra.florist",
+  "description": "Website katalog dan pemesanan toko bunga via WhatsApp dengan custom bouquet builder 3D dan status operasional real-time.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
